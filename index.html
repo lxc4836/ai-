@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="林畅 · 个人作品集 — 广州软件学院软件工程在读，关注 AI 辅助开发与大语言模型应用，展示个人介绍、技能方向与项目作品。">
+  <title>林畅 · 个人作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ============ 左侧：个人介绍 + 技能 + 导航 ============ -->
+  <aside class="sidebar" id="sidebar">
+    <header class="profile">
+      <div class="profile__avatar" aria-hidden="true">LC</div>
+      <h1 class="profile__name">林畅</h1>
+      <p class="profile__tagline" id="profileTagline"></p>
+      <p class="profile__bio" id="profileBio"></p>
+    </header>
+
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="打开导航" aria-expanded="false" aria-controls="sidebarInner">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="sidebar__inner" id="sidebarInner">
+      <nav class="side-nav" id="sideNav" aria-label="站内导航">
+        <a href="#projects" class="side-nav__link">项目作品</a>
+        <a href="#about" class="side-nav__link">关于我</a>
+        <a href="#contact" class="side-nav__link">联系方式</a>
+      </nav>
+
+      <section class="skills" id="skillGroups" aria-label="技能方向"></section>
+
+      <footer class="side-foot">
+        <a class="side-foot__link" id="sideEmail" href="mailto:">邮箱联系</a>
+        <a class="side-foot__link" id="sideGithub" href="#" target="_blank" rel="noopener">GitHub</a>
+      </footer>
+    </div>
+  </aside>
+
+  <!-- ============ 右侧：主内容区 ============ -->
+  <main class="main">
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <p class="hero__eyebrow"><span class="dot"></span>PORTFOLIO · 2026</p>
+      <h2 class="hero__title">用代码把想法<br>变成可用的产品</h2>
+      <p class="hero__intro" id="heroIntro"></p>
+      <div class="hero__stats" id="heroStats"></div>
+    </section>
+
+    <!-- 项目作品 -->
+    <section class="section" id="projects">
+      <header class="section__head">
+        <span class="section__no">01</span>
+        <div>
+          <h2 class="section__title">项目作品</h2>
+          <p class="section__sub">精选项目，按完成时间排列</p>
+        </div>
+      </header>
+      <div class="project-list" id="projectList"></div>
+    </section>
+
+    <!-- 关于我 -->
+    <section class="section" id="about">
+      <header class="section__head">
+        <span class="section__no">02</span>
+        <div>
+          <h2 class="section__title">关于我</h2>
+          <p class="section__sub">经历与方向</p>
+        </div>
+      </header>
+      <div class="about">
+        <div class="about__text" id="aboutText"></div>
+        <ul class="about__facts" id="aboutFacts"></ul>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="section section--contact" id="contact">
+      <header class="section__head">
+        <span class="section__no">03</span>
+        <div>
+          <h2 class="section__title">联系方式</h2>
+          <p class="section__sub">期待与你的交流</p>
+        </div>
+      </header>
+      <div class="contact">
+        <p class="contact__lead">Let&rsquo;s talk<span class="contact__dot">.</span></p>
+        <p class="contact__hint" id="contactHint"></p>
+        <div class="contact__actions">
+          <a class="btn btn--primary" id="contactEmail" href="mailto:">发送邮件</a>
+          <a class="btn btn--ghost" id="contactGithub" href="#" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-foot">
+      <span>© <span id="year"></span> 林畅 · 用心构建的每一行代码</span>
+    </footer>
+  </main>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
