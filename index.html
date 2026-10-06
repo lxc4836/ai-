@@ -17,6 +17,18 @@
   <!-- ============ 左侧：个人介绍 + 技能 + 导航 ============ -->
   <aside class="sidebar" id="sidebar">
     <header class="profile">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" aria-label="切换到深色主题" title="切换到深色主题">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false">
+          <path d="M21 12.9A8.6 8.6 0 1 1 11.1 3a6.7 6.7 0 0 0 9.9 9.9Z"
+                fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        </svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <g stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+            <path d="M12 2.6v2.5M12 18.9v2.5M2.6 12h2.5M18.9 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8"/>
+          </g>
+        </svg>
+      </button>
       <div class="profile__avatar" aria-hidden="true">LC</div>
       <h1 class="profile__name">林畅</h1>
       <p class="profile__tagline" id="profileTagline"></p>

@@ -151,6 +151,49 @@ function setupNavToggle() {
   });
 }
 
+/* ---------- 主题切换（浅色 / 深色） ---------- */
+var THEME_KEY = "portfolio-theme";
+
+function readStoredTheme() {
+  try {
+    return localStorage.getItem(THEME_KEY);
+  } catch (e) {
+    return null; // 隐私模式等场景下 localStorage 不可用
+  }
+}
+
+/* 应用主题：同步切换 data-theme、图标与无障碍文案 */
+function applyTheme(theme) {
+  var isDark = theme === "dark";
+  document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+
+  var toggle = document.getElementById("themeToggle");
+  if (toggle) {
+    var label = isDark ? "切换到浅色主题" : "切换到深色主题";
+    toggle.setAttribute("aria-pressed", String(isDark));
+    toggle.setAttribute("aria-label", label);
+    toggle.setAttribute("title", label);
+  }
+}
+
+function setupThemeToggle() {
+  var toggle = document.getElementById("themeToggle");
+  if (!toggle) return;
+
+  toggle.addEventListener("click", function () {
+    var next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(next);
+    try {
+      localStorage.setItem(THEME_KEY, next);
+    } catch (e) {
+      /* 忽略写入失败，不影响本次切换 */
+    }
+  });
+}
+
+/* 脚本位于 body 末尾，此处立即应用已保存主题，避免等待 DOMContentLoaded */
+applyTheme(readStoredTheme() === "dark" ? "dark" : "light");
+
 /* ---------- 初始化 ---------- */
 document.addEventListener("DOMContentLoaded", function () {
   renderProfile();
@@ -158,5 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
   renderProjects();
   setupNavHighlight();
   setupNavToggle();
+  setupThemeToggle();
   document.getElementById("year").textContent = new Date().getFullYear();
 });
